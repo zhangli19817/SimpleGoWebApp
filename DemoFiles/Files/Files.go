@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"strings"
 )
 
 func OpenFile(fileName string) (*os.File, error) {
@@ -29,16 +28,25 @@ func GetFileList(fileName string) ([]string, error) {
 	for scanner.Scan() {
 		var value string = scanner.Text()
 		//fmt.Println(value)
-		value = "\"" + strings.TrimSpace(value) + "\""
+		//value = "\"" + strings.TrimSpace(value) + "\""
+		value = "\"" + value + "\""
 		numbers = append(numbers, value)
 	}
 
-	fmt.Println(numbers)
+	//fmt.Println(numbers)
 
 	if scanner.Err() != nil {
 		return nil, scanner.Err()
 	}
 
-	CloseFile(file)
+	defer CloseFile(file)
 	return numbers, nil
+}
+
+func SocialMedia() error {
+
+	defer fmt.Println("Goodbye!")
+	fmt.Println("Hello World!")
+	return fmt.Errorf("I don't want to talk anymore!!!")
+
 }
