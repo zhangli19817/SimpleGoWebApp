@@ -59,3 +59,13 @@ func currentTime() {
 	current := time.Now()
 	fmt.Println(current.Hour(), current.Minute(), current.Second())
 }
+
+//testing result:
+//with go routines running the same workload cost 28s
+//without go routines running the same workdload cost 168s
+/*0 28 33
+with go routines:The total number is    2797068224134536192
+0 29 1
+without go routines:The total number is 2797068224134536192
+0 31 49*/
+
