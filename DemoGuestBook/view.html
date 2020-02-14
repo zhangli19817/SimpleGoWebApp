@@ -1,0 +1,15 @@
+<h1>
+    <h1>
+        <b>Welcome to Guest Home page</b>
+    </h1>
+    <div>
+        <p><b>Total {{.Total}} signatures:</b></p>
+        <a href="/main/new">please add your signature</a>
+    </div>
+    <div>
+        <p><b>The following is the signatures:</b></p>
+        {{range .Lists}}
+        <p>#. "{{.}}" </p>
+        {{end}}
+    </div>
+</h1>
